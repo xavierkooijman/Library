@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Caesar+Dressing&family=Julius+Sans+One&family=Libre+Baskerville&family=Mulish&family=Pompiere&family=Work+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: #ededed;
+  background-color: #1c1c1c;
+  font-family: "Work Sans";
+}
+
+header{
+  border-bottom: 1px solid #ededed;
+  padding: 1em 15%;
+}
+
+.logo{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#searchInput,#addBookButton{
+  padding: 0.7em;
+}
+
+
+#searchInput{
+  background-color: #1c1c1c;
+  border: solid 1px #ededed;
+  border-radius: 5px;
+  color: #ededed;
+}
+
+.headerContentContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button,input{
+  font: inherit;
+}
+
+button{
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+main{
+  padding: 0 15%;
+}
+
+.addButtonContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 170px;
+}
+
+#addBookButton{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.book{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  color: #1c1c1c;
+  background-color: #dac6fb;
+  width: 300px;
+  height: 350px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.book button{
+  padding: 0.6em;
+  width: 80%;
+}
