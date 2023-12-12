@@ -19,14 +19,28 @@
     </div>
     <div class="booksContainer">
       <div class="book">
-        <p class="bookTitle">"Fight Club"</p>
-        <p class="bookAuthor">By Chuck Palahniuk</p>
-        <p class="bookPages">226 pages</p>
+        <p>"Fight Club"</p>
+        <p>By Chuck Palahniuk</p>
+        <p>226 pages</p>
         <button id="bookStatusButton">Read</button>
         <button id="removeBookButton">Remove</button>
       </div>
     </div>
   </main>
+  <div id="modalBackground">
+    <div id="modal">
+      <form action="">
+        <input type="text" id="bookTitle" placeholder="Title">
+        <input type="text" id="bookAuthor" placeholder="Author">
+        <input type="number" id="bookPages" placeholder="Pages" min="0">
+        <div>
+          <label for="bookStatus">Have you read it?</label>
+          <input type="checkbox" id="bookStatus">
+        </div>
+        <button type="submit">Add Book</button>
+      </form>
+    </div>
+  </div>
   <script src="js/app.js"></script>
 </body>
 </html>
