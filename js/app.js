@@ -6,6 +6,7 @@ bookPagesInput = document.getElementById('bookPages')
 bookStatusInput = document.getElementById('bookStatus')
 addBookForm = document.getElementById('addBookForm')
 booksContainer = document.getElementById('booksContainer')
+searchInput = document.getElementById('searchInput')
 
 bookColors = ['#f79533', '#f37055', '#ef4e7b', '#a166ab', '#5073b8', '#1098ad', '#07b39b', '#6fba82', '#ff6f4f', '#dac6fb', '#029c54']
 let bookLibrary = []
@@ -98,3 +99,20 @@ addBookForm.addEventListener('submit', (event) => {
   displayNewBook(book)
   addBookForm.reset()
 })
+
+searchInput.addEventListener('keyup', () => {
+  const bookCards = document.querySelectorAll('[data-id]')
+  let searchValue = searchInput.value
+  for(let i=0; i < bookLibrary.length; i++){
+    let book = bookLibrary[i]
+    let title = book.title
+    let bookCard = bookCards[i]
+    if(title.includes(searchValue)){
+      bookCard.style.display = "flex"
+    }
+    else{
+      bookCard.style.display = "none"
+    }
+  }
+})
+
