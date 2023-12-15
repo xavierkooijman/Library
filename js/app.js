@@ -52,9 +52,11 @@ function removeBook(newDiv){
 
 function displayNewBook(book){
   modal.style.display = "none"
+  let randomColor = Math.floor(Math.random() * bookColors.length)
   const newDiv = document.createElement('div')
   newDiv.classList.add("book")
   newDiv.dataset.id = bookLibrary.length-1
+  newDiv.style.backgroundColor = bookColors[randomColor]
   const title = document.createElement('p')
   title.innerText = `"${book.title}"`
   const author = document.createElement('p')
