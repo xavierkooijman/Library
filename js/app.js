@@ -38,8 +38,16 @@ function toogleReadButton(book,readButton){
   }
 }
 
-function removeBook(){
-  
+function removeBook(newDiv){
+  let bookId = newDiv.dataset.id
+  bookLibrary.splice(bookId,1)
+  console.log(bookLibrary)
+  newDiv.remove()
+  let i = 0
+  for(let child of booksContainer.children){
+    child.dataset.id = i
+    i++
+  }
 }
 
 function displayNewBook(book){
@@ -66,7 +74,7 @@ function displayNewBook(book){
   const removeButton = document.createElement('button')
   removeButton.innerText = "Remove"
   removeButton.addEventListener('click', () => {
-
+    removeBook(newDiv)
   })
   newDiv.append(title,author,pages,readButton,removeButton)
   booksContainer.appendChild(newDiv)
