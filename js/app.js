@@ -27,17 +27,48 @@ function addBookToLibrary(){
   return book
 }
 
+function toogleReadButton(book,readButton){
+  if(book.read === true){
+    readButton.innerText = "Not read"
+    book.read = false
+  }
+  else{
+    readButton.innerText = "Read"
+    book.read = true
+  }
+}
+
+function removeBook(){
+  
+}
+
 function displayNewBook(book){
   modal.style.display = "none"
   const newDiv = document.createElement('div')
   newDiv.classList.add("book")
+  newDiv.dataset.id = bookLibrary.length-1
   const title = document.createElement('p')
   title.innerText = `"${book.title}"`
   const author = document.createElement('p')
-  author.innerText = book.author
+  author.innerText = `By ${book.author}`
   const pages = document.createElement('p')
   pages.innerText = `${book.pages} pages`
-  newDiv.append(title,author,pages)
+  const readButton = document.createElement('button')
+  if(book.read === true){
+    readButton.innerText = "Read"
+  }
+  else{
+    readButton.innerText = "Not read"
+  }
+  readButton.addEventListener('click', () => {
+    toogleReadButton(book,readButton)
+  })
+  const removeButton = document.createElement('button')
+  removeButton.innerText = "Remove"
+  removeButton.addEventListener('click', () => {
+
+  })
+  newDiv.append(title,author,pages,readButton,removeButton)
   booksContainer.appendChild(newDiv)
 }
 
@@ -55,4 +86,5 @@ addBookForm.addEventListener('submit', (event) => {
   event.preventDefault()
   let book = addBookToLibrary()
   displayNewBook(book)
+  addBookForm.reset()
 })

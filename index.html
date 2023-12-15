@@ -18,21 +18,14 @@
       <button id="addBookButton">+ Add Book</button>
     </div>
     <div id="booksContainer">
-      <div class="book">
-        <p>"Fight Club"</p>
-        <p>By Chuck Palahniuk</p>
-        <p>226 pages</p>
-        <button>Read</button>
-        <button>Remove</button>
-      </div>
     </div>
   </main>
   <div id="modalBackground">
     <div id="modal">
       <form action="" id="addBookForm">
-        <input type="text" id="bookTitle" placeholder="Title">
-        <input type="text" id="bookAuthor" placeholder="Author">
-        <input type="number" id="bookPages" placeholder="Pages" min="0">
+        <input type="text" id="bookTitle" placeholder="Title" required>
+        <input type="text" id="bookAuthor" placeholder="Author" required>
+        <input type="number" id="bookPages" placeholder="Pages" min="0" required>
         <div>
           <label for="bookStatus">Have you read it?</label>
           <input type="checkbox" id="bookStatus">
