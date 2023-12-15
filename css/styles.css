@@ -80,6 +80,8 @@ main{
   font-size: 1.5rem;
   font-weight: bold;
   border-radius: 15px;
+  animation-name: modalAnimation;
+  animation-duration: 0.4s;
 }
 
 .book button{
@@ -107,8 +109,6 @@ form{
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  animation-name: modalAnimation;
-  animation-duration: 0.4s;
 }
 
 #modal input{
@@ -149,6 +149,11 @@ label{
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
+}
+
+#booksContainer{
+  display: grid;
+  grid-template-columns: 3;
 }
 
 @keyframes modalAnimation{
